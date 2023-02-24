@@ -17,7 +17,7 @@ assessmentButton.onclick = () => {
     //headerDividedの作成
     const header = document.createElement('div');
     headerDivided.setAttribute('class','card-header');
-    header.innerText = '診断結果';
+    headerDivided.innerText = '診断結果';
 
     //bodyDividedの作成
     const bodyDivided = document.createElement('div');
@@ -27,7 +27,7 @@ assessmentButton.onclick = () => {
     paragraph.setAttribute('class','card-text');
     const result = assessment(userName);
     paragraph.innerText = result;
-    resultDivided.appendChild(paragraph);
+    bodyDivided.appendChild(paragraph);
     
     //resultDividedにBootstrapのスタイルを適用する
     resultDivided.setAttribute('class','card');
