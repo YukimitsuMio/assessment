@@ -37,17 +37,20 @@ assessmentButton.onclick = () => {
     resultDivided.appendChild(headerDivided);
     resultDivided.appendChild(bodyDivided);
     
-    //ツイートエリアの表示
+    // ツイートエリアの作成
     tweetDivided.innerText = '';
     const anchor = document.createElement('a');
-    const hrefValue = 'https://twitter.com/intent/tweet?button_hashtag=' + encodeURIcomponent('あなたのいいところ') + '&ref_src=twsrc%5Etfw';
-
-    anchor.setAttribute('href',hrefValue);
-    anchor.setAttribute('class','twitter-hashtag-button');
-    anchor.setAttribute('date-text',result);
+    const hrefValue =
+    'https://twitter.com/intent/tweet?button_hashtag=' +
+    encodeURIComponent('あなたのいいところ') +
+    '&ref_src=twsrc%5Etfw';
+    anchor.setAttribute('href', hrefValue);
+    anchor.setAttribute('class', 'twitter-hashtag-button');
+    anchor.setAttribute('data-text', result);
     anchor.innerText = 'Tweet #あなたのいいところ';
-
     tweetDivided.appendChild(anchor);
+
+    // widgets.js の設定
     const script = document.createElement('script');
     script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
     tweetDivided.appendChild(script);
